@@ -45,7 +45,7 @@ geth --datadir selfchain init C:\Users\THINK\AppData\Local\Ethereum\genesis.json
 ※所有步骤中，windows下的控制台窗口都是在`C:\Users\THINK\AppData\Local\Ethereum`目录下打开
 3. 启动私有链网络
 ```
-geth --networkid 123 --datadir selfchain --rpc --rpcaddr 192.168.11.46 --rpcport 8545 --port 3000 --rpcapi personal,db,eth,net,web3 --allow-insecure-unlock --ipcdisable --nodiscover console
+geth --networkid 123 --datadir selfchain --rpc --rpcaddr 192.168.11.46 --rpcport 8545 --port 3000 --rpcapi personal,db,eth,net,web3 --allow-insecure-unlock --ipcdisable --nodiscover console 2>>geth1.log
 ```
 
 4. 创建账号
@@ -127,7 +127,7 @@ geth --datadir selfchain02 init C:\Users\THINK\AppData\Local\Ethereum\genesis.js
 ```
 11. 启动第二个节点
 ```
-geth --networkid 123 --datadir selfchain02 --rpc --rpcaddr 192.168.11.46 --rpcport 8546 --port 3001 --rpcapi personal,db,eth,net,web3 --allow-insecure-unlock --ipcdisable --nodiscover console
+geth --networkid 123 --datadir selfchain02 --rpc --rpcaddr 192.168.11.46 --rpcport 8546 --port 3001 --rpcapi personal,db,eth,net,web3 --allow-insecure-unlock --ipcdisable --nodiscover console 2>>geth2.log
 ```
 12. 第一个节点上查看`enode`
 ```
@@ -194,41 +194,25 @@ txpool.status
 eth.getBalance("0xf647200766920efcc97acb884ef1753620c0006f")
 ```
 17. `Geth`常用命令
-- 创建账户
-`personal.newAccount()`
-- 解锁账户
-`personal.unlockAccount()`
-- 查看a节点上所有账户
-`personal.listAccounts`
-- 枚举系统中的账户
-`eth.accounts`
-- 查看账户余额，返回值的单位是 Wei
-`eth.getBalance('地址')`
-- 列出区块总数
-`eth.blockNumber`
-- 获取交易
-`eth.getTransaction()`
-- 获取区块
-`eth.getBlock()`
-- 节点挖矿奖励所在的账户
-`eth.coinbase`
-- 查看节点连接数
-`web3.net.peerCount`
-- 查看连接的节点信息
-`admin.peers`
-- Wei 换算成以太币
-`web3.fromWei()`
-- 以太币换算成 Wei
-`web3.toWei()`
-- 交易池中的状态
-`txpool.status`
-- 连接到其他节点
-`admin.addPeer()`
-- 开始挖矿
-`miner.start()`
-- 停止挖矿
-`miner.stop()`
-- 修改节点的挖矿账户
-`miner.setEtherbase()`
-- 查看节点所有的账户详情
-`personal.listWallets`
+|  单位  |  wei值  |
+|  ---   |  -----  |
+|  创建账户  |  `personal.newAccount()`  |
+|  解锁账户  |  `personal.unlockAccount()`  |
+|  查看a节点上所有账户  |  `personal.listAccounts`  |
+|  查看节点所有的账户详情  |  `personal.listWallets`  |
+|  枚举系统中的账户  |  `eth.accounts`  |
+|  查看账户余额，返回值的单位是 Wei  |  `eth.getBalance('地址')`  |
+|  列出区块总数  |  `eth.blockNumber`  |
+|  获取交易  |  `eth.getTransaction()`  |
+|  获取区块  |  `eth.getBlock()`  |
+|  节点挖矿奖励所在的账户  |  `eth.coinbase`  |
+|  查看节点连接数  |  `web3.net.peerCount`  |
+|  Wei 换算成以太币  |  `web3.fromWei()`  |
+|  以太币换算成 Wei  |  `web3.toWei()`  |
+|  交易池中的状态  |  `txpool.status`  |
+|  连接到其他节点  |  `admin.addPeer()`  |
+|  查看连接的节点信息  |  `admin.peers`  |
+|  查看本节点的连接数  |  `net.peerCount`  |
+|  开始挖矿  |  `miner.start()`  |
+|  停止挖矿  |  `miner.stop()`  |
+|  修改节点的挖矿账户  |  `miner.setEtherbase()`  |
