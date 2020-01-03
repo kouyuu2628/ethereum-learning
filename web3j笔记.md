@@ -47,7 +47,6 @@ geth --datadir selfchain init C:\Users\THINK\AppData\Local\Ethereum\genesis.json
 ```
 geth --networkid 123 --datadir selfchain --rpc --rpcaddr 192.168.11.46 --rpcport 8545 --port 3000 --rpcapi personal,db,eth,net,web3 --allow-insecure-unlock --ipcdisable --nodiscover console 2>>geth1.log
 ```
-
 4. 创建账号
 ```
 personal.newAccount("huangyong001")
