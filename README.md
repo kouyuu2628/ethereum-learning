@@ -1,10 +1,10 @@
-#### 以太坊开发环境搭建
-```
-1. Atom及相关插件安装.md
-2. NPM安装.md
-3. Linux用户操作.md
-4. Truffle安装.md
-5. Truffle使用.md
-6. 创建简易代币合约.md
-7. 通过openzeppelin-solidity建立标准代币.md
-```
+# 以太坊学习笔记
+|||
+|---|---|
+|Linux|centos7.7|
+|Go|go1.13.5|
+|Geth|1.9.9-stable|
+|Truffle|5.1.4|
+|Solidity|0.5.12|
+|Node|13.4.0|
+|Web3.js|1.2.1|
