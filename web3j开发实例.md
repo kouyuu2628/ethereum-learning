@@ -52,4 +52,4 @@ contract EncryptedToken {
 ```
 合约文件放到`/resources/constracts`目录下
 ## 通过geth控制台发布合约，并将合约实例的相关信息记录在配置文件
-![配置文件](https://github.com/kouyuu2628/ethereum-learning/blob/master/img/%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png)
+![配置文件.png](https://upload-images.jianshu.io/upload_images/20507398-6b2f6ac2b8bec5ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
