@@ -1,7 +1,7 @@
 # 以太坊学习笔记
 |软件|版本|
 | ---- | ---- |
-|Linux|centos7.7|
+|Linux|centos7.7 Minimal|
 |Go|go1.13.5|
 |Geth|1.9.9-stable|
 |Truffle|5.1.4|

@@ -1,0 +1,20 @@
+server:
+  port: 8881
+  servlet:
+    context-path: /Demo1/
+
+#以太坊信息
+ethereum:
+  #合约发布信息
+  contract:
+    #合约发布账户密码
+    password: huangyong001
+    #合约发布账户keystore文件名称
+    keystore: UTC--2019-12-24T06-24-57.131296400Z--d729dadd63721093358cec5468dd8367f7e60516
+    #合约实例地址
+    address: '0xa79f43e8a9a7ce3bf1269f97a2d1a3700c2f1a9f'
+  #私有链节点IP
+  ip: http://192.168.11.46:8545/
+
+#文件存放路径
+staticResourcePath: /usr/local/web3jlabs/static/
