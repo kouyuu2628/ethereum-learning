@@ -1,0 +1,4 @@
+server:
+  port: 8882
+  servlet:
+    context-path: /Voting/

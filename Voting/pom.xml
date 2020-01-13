@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.web3jlabs.eth</groupId>
+    <artifactId>Voting</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>web3j-spring-boot-starter</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.web3j</groupId>
+            <artifactId>core</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.1.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.web3j</groupId>
+                <artifactId>web3j-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <packageName>com.web3jlabs.eth.contracts</packageName>
+                    <sourceDestination>src/main/java</sourceDestination>
+                    <nativeJavaType>true</nativeJavaType>
+                    <outputFormat>java,bin,abi</outputFormat>
+                    <soliditySourceFiles>
+                        <directory>src/main/resources</directory>
+                        <includes>
+                            <include>**/*.sol</include>
+                        </includes>
+                    </soliditySourceFiles>
+                    <outputDirectory>
+                        <java>src/main/java</java>
+                        <bin>src/main/bin</bin>
+                        <abi>src/main/abi</abi>
+                    </outputDirectory>
+                    <contract>
+                        <includes>
+                            <include>greeter</include>
+                        </includes>
+                        <excludes>
+                            <exclude>mortal</exclude>
+                        </excludes>
+                    </contract>
+                    <!--                    <pathPrefixes>-->
+                    <!--                        <pathPrefix>dep=../dependencies</pathPrefix>-->
+                    <!--                    </pathPrefixes>-->
+                </configuration>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
